@@ -3,27 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Eyly ❤️</title>
+    <title>Para Princesita ❤️</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #d63384; --bg: #fdf2f2; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg); color: #333; margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-        .hero { padding: 40px 20px; text-align: center; width: 100%; background: white; border-bottom: 2px solid #f9d5d5; }
-        h1 { font-family: 'Dancing Script', cursive; color: var(--primary); font-size: 3rem; margin: 0; }
-        #contador { font-size: 1.1rem; margin-top: 15px; color: #666; font-weight: 300; }
-        .razones-container { background: white; margin: 30px 20px; padding: 40px 30px; border-radius: 20px; max-width: 450px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
-        #razon-texto { min-height: 120px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; line-height: 1.6; color: #444; margin-bottom: 20px; }
-        button { background-color: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(214, 51, 132, 0.3); }
-        button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(214, 51, 132, 0.4); }
-        .spotify-widget { margin: 20px 0; border-radius: 12px; overflow: hidden; }
-        footer { margin-top: auto; padding: 20px; font-size: 0.8rem; color: #999; }
+        :root { --primary: #ff4d6d; --bg-dark: #121212; --glass: rgba(20, 20, 20, 0.85); }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--bg-dark); 
+            /* Sube una foto a GitHub llamada exactamente fondo.jpg para que reemplace este color oscuro */
+            background-image: url('fondo.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            color: #f0f0f0; 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh; 
+        }
+        .hero { 
+            padding: 50px 20px; 
+            text-align: center; 
+            width: 100%; 
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)); 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+        h1 { font-family: 'Dancing Script', cursive; color: var(--primary); font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+        #contador { font-size: 1.2rem; margin-top: 15px; color: #ccc; font-weight: 300; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
+        .razones-container { 
+            background: var(--glass); 
+            backdrop-filter: blur(10px);
+            margin: 40px 20px; 
+            padding: 40px 30px; 
+            border-radius: 20px; 
+            max-width: 450px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+            text-align: center; 
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        #razon-texto { min-height: 120px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; line-height: 1.6; color: #e0e0e0; margin-bottom: 20px; }
+        button { 
+            background-color: var(--primary); 
+            color: white; 
+            border: none; 
+            padding: 15px 30px; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-size: 1rem; 
+            font-weight: 600; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4); 
+        }
+        button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 77, 109, 0.6); }
+        .spotify-widget { margin: 20px 0; border-radius: 12px; overflow: hidden; width: 100%; max-width: 350px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        footer { margin-top: auto; padding: 20px; font-size: 0.8rem; color: #777; background: rgba(0,0,0,0.8); width: 100%; text-align: center;}
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <h1>Feliz San Valentín, Eyly ❤️</h1>
-        <div id="contador">Cargando nuestro tiempo juntos...</div>
+        <h1>Feliz San Valentín, Princesita ❤️</h1>
+        <div id="contador">Calculando el tiempo a tu lado...</div>
     </section>
 
     <section class="razones-container">
@@ -32,20 +73,24 @@
     </section>
 
     <div class="spotify-widget">
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/37i9dQZF1DX7rOY2tusoIU?utm_source=generator" width="300" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2fT1OUvA003l5k0yQeLg5t?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
     <footer>Hecho con ❤️ especialmente para ti</footer>
 
     <script>
-        // Configuración de la fecha (Año, Mes-1, Día)
-        const fechaInicio = new Date(2024, 6, 1); 
+        // Configuración de la fecha: 14 de Enero, 22:00 horas (10 PM)
+        const fechaInicio = new Date(2026, 0, 14, 22, 0, 0); 
 
         function actualizarContador() {
             const ahora = new Date();
             const diff = ahora - fechaInicio;
+            
             const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-            document.getElementById('contador').innerText = `${dias} días compartiendo la vida contigo`;
+            const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('contador').innerText = `${dias} días, ${horas} horas y ${minutos} minutos compartiendo la vida contigo`;
         }
         setInterval(actualizarContador, 1000);
         actualizarContador();
@@ -150,7 +195,7 @@
             "Porque te amo por quien eres y por quien soy cuando estoy contigo.",
             "Porque cada día te vuelvo a elegir por encima de todo.",
             "Porque cada segundo a tu lado cuenta.",
-            "Simplemente, porque eres tú, Eyly, y eso es todo lo que necesito."
+            "Simplemente, porque eres tú, Princesita, y eso es todo lo que necesito."
         ];
 
         function generarRazon() {
@@ -164,4 +209,5 @@
         }
     </script>
 </body>
-</html>		
+</html>
+me 
