@@ -1,357 +1,109 @@
+cat << 'EOF' > index.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Princesita ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
-    <style>
-        :root { --primary: #ff4d6d; --bg: #fff0f3; --card-bg: #ffffff; --text: #590d22; }
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: var(--bg); 
-            background-image: radial-gradient(#ffccd5 1.5px, transparent 1.5px);
-            background-size: 25px 25px;
-            color: var(--text); 
-            margin: 0; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            min-height: 100vh; 
-        }
-        .hero { 
-            padding: 40px 20px 20px 20px; 
-            text-align: center; 
-            width: 100%; 
-        }
-        h1 { 
-            font-family: 'Pacifico', cursive; 
-            color: var(--primary); 
-            font-size: 3.5rem; 
-            margin: 0; 
-            text-shadow: 2px 2px 0px #ffe4e8;
-            letter-spacing: 1px;
-        }
-        #contador { 
-            font-size: 1.1rem; 
-            margin-top: 15px; 
-            color: #800f2f; 
-            font-weight: 600; 
-        }
-        .razones-container { 
-            background: var(--card-bg); 
-            margin: 20px 20px 30px 20px; 
-            padding: 40px 30px; 
-            border-radius: 25px; 
-            max-width: 450px; 
-            box-shadow: 0 10px 30px rgba(255, 77, 109, 0.15); 
-            text-align: center; 
-            border: 2px solid #ffb3c6;
-        }
-        #razon-texto { 
-            min-height: 120px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 1.2rem; 
-            line-height: 1.6; 
-            color: var(--text); 
-            margin-bottom: 25px; 
-            font-weight: 500;
-        }
-        button { 
-            background-color: var(--primary); 
-            color: white; 
-            border: none; 
-            padding: 15px 35px; 
-            border-radius: 50px; 
-            cursor: pointer; 
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem; 
-            font-weight: 600; 
-            transition: all 0.3s ease; 
-            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3); 
-        }
-        button:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 6px 20px rgba(255, 77, 109, 0.5); 
-            background-color: #ff3355;
-        }
-        .spotify-widget { 
-            margin: 10px 0 30px 0; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            width: 100%; 
-            max-width: 350px; 
-            box-shadow: 0 8px 25px rgba(255, 77, 109, 0.2); 
-            border: 2px solid #ffb3c6;
-        }
-        footer { 
-            margin-top: auto; 
-            padding: 20px; 
-            font-size: 0.9rem; 
-            color: #ff758f; 
-            text-align: center; 
-            font-weight: 600;
-        }
-    </style>
-</head>
-<body>
-
-    <section class="hero">
-        <h1>Feliz San Valentín, Princesita ❤️</h1>
-        <div id="contador">Calculando el tiempo a tu lado...</div>
-    </section>
-
-    <section class="razones-container">
-        <p id="razon-texto">Presiona el botón para descubrir una razón por la que te amo...</p>
-        <button onclick="generarRazon()">Ver razón</button>
-    </section>
-
-    <div class="spotify-widget">
-        <iframe style="border-radius:15px" src="https://open.spotify.com/intl-es/track/7b3k8I1fncAzbk9PHnLkbX?si=19c07fba0c8d4ff6" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-
-    <footer>Hecho con mucho amor para ti</footer>
-
-    <script>
-        // 14 de enero de 2026, 22:00 hrs
-        const fechaInicio = new Date(2026, 0, 14, 22, 0, 0); 
-
-        function actualizarContador() {
-            const ahora = new Date();
-            const diff = ahora - fechaInicio;
-            
-            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            
-            document.getElementById('contador').innerText = `${dias} días, ${horas} horas y ${minutos} minutos compartiendo la vida contigo`;
-        }
-        setInterval(actualizarContador, 1000);
-        actualizarContador();
-
-        const razones = [
-            "Por esos abrazos que me reinician el mundo cuando más lo necesito.",
-            "Por cómo me transmites calma con un solo beso.",
-            "Por entender mis momentos de enfoque y darme mi espacio sin decir nada.",
-            "Por esa forma tan tuya de hacerme sentir que soy la única persona en la habitación cuando me miras.",
-            "Por el gesto que haces cuando estás concentrada analizando algo.",
-            "Por cómo me cambia el ánimo apenas escucho tu voz al contestar el teléfono.",
-            "Porque eres mi compañera de vida y la mujer que me vuelve loco a la vez.",
-            "Por la cuenta regresiva que hago en mi mente cada mes para volver a tenerte frente a mí.",
-            "Por la forma en que te acomodas el cabello cuando te pones nerviosa o coqueta.",
-            "Por ese último beso antes de irnos, que me deja con ganas de que no se acabe el día.",
-            "Por cómo me miras cuando te cuento algo que me emociona.",
-            "Por esa sonrisa que me desarma cada vez que la veo.",
-            "Porque contigo el tiempo no corre, vuela.",
-            "Por la paz que siento cuando apoyo mi cabeza en tu hombro.",
-            "Por la forma en que me haces sentir que todo va a estar bien.",
-            "Porque eres la primera persona a la que quiero contarle mis buenas noticias.",
-            "Por cómo tus manos encajan perfectamente con las mías.",
-            "Por los 'te amo' que me dices cuando menos me lo espero.",
-            "Porque me encanta cómo te ves cuando te acabas de despertar.",
-            "Por tu risa, que es la melodía más bonita que he escuchado.",
-            "Por la forma en que me cuidas cuando me siento mal.",
-            "Por cómo te preocupas de que siempre llegue bien a casa.",
-            "Porque eres mi refugio después de un día de trabajo agotador.",
-            "Porque me haces creer en los planes a largo plazo.",
-            "Por el brillo de tus ojos cuando hablas de lo que te apasiona.",
-            "Por la paciencia infinita que me tienes.",
-            "Por cómo me haces reír de mis propias tonterías.",
-            "Porque eres la mujer más hermosa que mis ojos han visto.",
-            "Por la complicidad que tenemos sin decir una sola palabra.",
-            "Por las canciones que ahora solo me recuerdan a ti.",
-            "Por la forma en que me motivas a ser mejor hombre.",
-            "Porque confío en ti más que en nadie en el mundo.",
-            "Por los detalles que tienes conmigo sin que sea una fecha especial.",
-            "Por cómo me haces sentir especial con solo un mensaje.",
-            "Porque me encanta que seas mi última llamada del día.",
-            "Por la seguridad que me da saber que estás en mi vida.",
-            "Por la valentía que tienes para enfrentar cualquier problema.",
-            "Por la forma en que iluminas cualquier lugar al que entras.",
-            "Porque me encanta planear viajes y salidas contigo.",
-            "Por los recuerdos que hemos construido y los que faltan.",
-            "Por cómo me escuchas aunque te cuente lo mismo mil veces.",
-            "Por tu inteligencia y la forma en que ves el mundo.",
-            "Porque me haces sentir que soy el único para ti.",
-            "Por la ternura que escondes detrás de tu fuerza.",
-            "Por cómo me apoyas en mis sueños, por más locos que sean.",
-            "Porque contigo la vida es mucho más fácil y bonita.",
-            "Por la forma en que me buscas cuando estamos caminando.",
-            "Por esos besos largos que me dejan sin aliento.",
-            "Porque me conoces mejor que nadie y aun así me amas.",
-            "Por la manera en que te llevas con la gente que aprecio.",
-            "Por tu honestidad y tu transparencia.",
-            "Porque no me imagino un futuro donde no estés tú.",
-            "Por cómo me miras cuando crees que no me doy cuenta.",
-            "Por la forma en que me haces sentir protegido.",
-            "Porque eres mi persona favorita en todo el universo.",
-            "Por tu capacidad de perdonar mis errores.",
-            "Por cómo me haces sentir que soy suficiente.",
-            "Por la dulzura de tus palabras cuando estoy estresado.",
-            "Porque me encanta cuando te quedas dormida a mi lado.",
-            "Por la forma en que te preocupas por mi bienestar.",
-            "Por cómo logras que me olvide de todo el mundo cuando estoy contigo.",
-            "Por los mensajes de voz que guardo para escucharlos después.",
-            "Por tu sentido del humor que encaja perfecto con el mío.",
-            "Por la lealtad que me demuestras cada día.",
-            "Porque eres mi equilibrio cuando todo se vuelve un caos.",
-            "Por cómo me haces reír hasta que me duele la panza.",
-            "Porque me haces sentir que puedo conquistar el mundo.",
-            "Por tu sencillez y tu gran corazón.",
-            "Por la forma en que me haces sentir en casa, esté donde esté.",
-            "Por cómo te emocionas con las pequeñas cosas.",
-            "Porque eres la razón de mis sonrisas espontáneas.",
-            "Por la forma en que me tomas de la mano frente a todos.",
-            "Por tu fuerza para levantarte después de cada caída.",
-            "Porque me encanta que compartamos nuestros gustos y aficiones.",
-            "Por cómo me haces sentir que nuestra historia es única.",
-            "Por la tranquilidad que me da tu presencia.",
-            "Por esos momentos de silencio que no son incómodos contigo.",
-            "Por cómo me haces sentir que el amor es algo sencillo.",
-            "Por la forma en que me miras cuando me dices que me amas.",
-            "Porque eres el mejor regalo que la vida me ha dado.",
-            "Por cómo me haces sentir que juntos podemos con todo.",
-            "Por tu capacidad para sorprenderme cada día.",
-            "Por la forma en que cuidas nuestra relación.",
-            "Porque me haces sentir el hombre más afortunado del planeta.",
-            "Por la manera en que pronuncias mi nombre.",
-            "Por cómo me haces sentir que cada esfuerzo vale la pena.",
-            "Por tu elegancia, no solo al vestir, sino al ser.",
-            "Porque eres mi luz en los momentos más oscuros.",
-            "Por la forma en que me haces sentir que somos un equipo.",
-            "Por cómo me haces vibrar con solo un roce.",
-            "Porque eres mi motivación para despertar con ganas cada mañana.",
-            "Por la manera en que me haces sentir que el mundo es un lugar mejor.",
-            "Por tu paciencia con mis manías.",
-            "Por cómo me haces sentir que nuestro amor no tiene límites.",
-            "Por la esperanza que me das de un futuro brillante a tu lado.",
-            "Por ser mi compañera de aventuras y de vida.",
-            "Porque te amo por quien eres y por quien soy cuando estoy contigo.",
-            "Porque cada día te vuelvo a elegir por encima de todo.",
-            "Porque cada segundo a tu lado cuenta.",
-            "Simplemente, porque eres tú, Princesita, y eso es todo lo que necesito."
-        ];
-
-        function generarRazon() {
-            const index = Math.floor(Math.random() * razones.length);
-            const texto = document.getElementById('razon-texto');
-            texto.style.opacity = 0;
-            texto.style.transition = "opacity 0.3s ease";
-            setTimeout(() => {
-                texto.innerText = razones[index];
-                texto.style.opacity = 1;
-            }, 300);
-        }
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Princesita</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Parisienne&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #8a0303; --bg-dark: #0a0a0a; --glass: rgba(15, 15, 15, 0.85); }
-        body { 
-            font-family: 'Cinzel', serif; 
-            background-color: var(--bg-dark); 
-            background-image: url('fondo.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed; 
-            color: #d4d4d4; 
-            margin: 0; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            min-height: 100vh; 
+        :root {
+            --primary-gradient: linear-gradient(135deg, #ff3366, #ff7f50);
+            --bg-color: #fafafa;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --text-dark: #1d1d1f;
+            --text-light: #86868b;
+            --shadow-soft: 0 10px 30px -10px rgba(255, 51, 102, 0.15);
         }
-        .hero { 
-            padding: 50px 20px; 
-            text-align: center; 
-            width: 100%; 
-            background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.7)); 
-            border-bottom: 1px solid rgba(138, 3, 3, 0.3); 
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top center, #ffe6ea, #ffffff 70%);
+            color: var(--text-dark);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
-        h1 { 
-            font-family: 'UnifrakturMaguntia', cursive; 
-            color: var(--primary); 
-            font-size: 4rem; 
-            margin: 0; 
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.9); 
-            letter-spacing: 2px; 
+
+        .hero {
+            padding: 60px 20px 30px 20px;
+            text-align: center;
+            width: 100%;
         }
-        #contador { 
-            font-size: 1.2rem; 
-            margin-top: 15px; 
-            color: #a0a0a0; 
-            font-weight: 700; 
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.9); 
+
+        h1 {
+            font-family: 'Parisienne', cursive;
+            font-size: 3.5rem;
+            margin: 0;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 400;
+        }
+
+        #contador {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 10px;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        .razones-container { 
-            background: var(--glass); 
-            backdrop-filter: blur(10px);
-            margin: 40px 20px; 
-            padding: 40px 30px; 
-            border-radius: 5px; 
-            max-width: 450px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.9); 
-            text-align: center; 
-            border: 1px solid rgba(138, 3, 3, 0.3);
+
+        .razones-container {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            margin: 30px 20px;
+            padding: 40px 30px;
+            border-radius: 28px;
+            max-width: 400px;
+            width: 85%;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
         }
-        #razon-texto { 
-            min-height: 120px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 1.3rem; 
-            line-height: 1.6; 
-            color: #e0e0e0; 
-            margin-bottom: 20px; 
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+
+        #razon-texto {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
         }
-        button { 
-            background-color: var(--primary); 
-            color: white; 
-            border: 1px solid #5a0202; 
-            padding: 15px 30px; 
-            border-radius: 3px; 
-            cursor: pointer; 
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem; 
-            font-weight: 700; 
-            transition: all 0.3s ease; 
-            box-shadow: 0 4px 15px rgba(138, 3, 3, 0.4); 
-            letter-spacing: 1px;
+
+        button {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
         }
-        button:hover { 
-            transform: translateY(-2px); 
-            box-shadow: 0 6px 20px rgba(138, 3, 3, 0.8); 
-            background-color: #a10404;
+
+        button:hover { transform: scale(1.05); }
+
+        .spotify-widget {
+            margin-bottom: 40px;
+            width: 85%;
+            max-width: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
         }
-        .spotify-widget { 
-            margin: 20px 0; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            width: 100%; 
-            max-width: 350px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.9); 
-            border: 1px solid rgba(138, 3, 3, 0.3); 
-        }
-        footer { 
-            margin-top: auto; 
-            padding: 20px; 
-            font-size: 0.9rem; 
-            color: #666; 
-            background: rgba(0,0,0,0.9); 
-            width: 100%; 
-            text-align: center; 
-            border-top: 1px solid rgba(138, 3, 3, 0.3); 
-            letter-spacing: 1px;
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: var(--text-light);
         }
     </style>
 </head>
@@ -359,7 +111,7 @@
 
     <section class="hero">
         <h1>Feliz San Valentín, Princesita</h1>
-        <div id="contador">Calculando el tiempo a tu lado...</div>
+        <div id="contador">Cargando nuestro tiempo...</div>
     </section>
 
     <section class="razones-container">
@@ -368,23 +120,22 @@
     </section>
 
     <div class="spotify-widget">
-        <iframe style="border-radius:12px" src="https://open.spotify.com/intl-es/track/7b3k8I1fncAzbk9PHnLkbX?si=19c07fba0c8d4ff6" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe style="border-radius:20px" src="https://open.spotify.com/intl-es/track/7b3k8I1fncAzbk9PHnLkbX?si=19c07fba0c8d4ff6" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
-    <footer>Hecho especialmente para ti</footer>
+    <footer>Hecho con mucho amor para ti</footer>
 
     <script>
+        // Fecha configurada: 14 de Enero de 2026, 10:00 PM
         const fechaInicio = new Date(2026, 0, 14, 22, 0, 0); 
 
         function actualizarContador() {
             const ahora = new Date();
             const diff = ahora - fechaInicio;
-            
             const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
             const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            
-            document.getElementById('contador').innerText = `${dias} días, ${horas} horas y ${minutos} minutos compartiendo la vida contigo`;
+            document.getElementById('contador').innerText = `${dias} DÍAS, ${horas} HORAS Y ${minutos} MINUTOS JUNTOS`;
         }
         setInterval(actualizarContador, 1000);
         actualizarContador();
@@ -418,89 +169,4 @@
             "Por la paciencia infinita que me tienes.",
             "Por cómo me haces reír de mis propias tonterías.",
             "Porque eres la mujer más hermosa que mis ojos han visto.",
-            "Por la complicidad que tenemos sin decir una sola palabra.",
-            "Por las canciones que ahora solo me recuerdan a ti.",
-            "Por la forma en que me motivas a ser mejor hombre.",
-            "Porque confío en ti más que en nadie en el mundo.",
-            "Por los detalles que tienes conmigo sin que sea una fecha especial.",
-            "Por cómo me haces sentir especial con solo un mensaje.",
-            "Porque me encanta que seas mi última llamada del día.",
-            "Por la seguridad que me da saber que estás en mi vida.",
-            "Por la valentía que tienes para enfrentar cualquier problema.",
-            "Por la forma en que iluminas cualquier lugar al que entras.",
-            "Porque me encanta planear viajes y salidas contigo.",
-            "Por los recuerdos que hemos construido y los que faltan.",
-            "Por cómo me escuchas aunque te cuente lo mismo mil veces.",
-            "Por tu inteligencia y la forma en que ves el mundo.",
-            "Porque me haces sentir que soy el único para ti.",
-            "Por la ternura que escondes detrás de tu fuerza.",
-            "Por cómo me apoyas en mis sueños, por más locos que sean.",
-            "Porque contigo la vida es mucho más fácil y bonita.",
-            "Por la forma en que me buscas cuando estamos caminando.",
-            "Por esos besos largos que me dejan sin aliento.",
-            "Porque me conoces mejor que nadie y aun así me amas.",
-            "Por la manera en que te llevas con la gente que aprecio.",
-            "Por tu honestidad y tu transparencia.",
-            "Porque no me imagino un futuro donde no estés tú.",
-            "Por cómo me miras cuando crees que no me doy cuenta.",
-            "Por la forma en que me haces sentir protegido.",
-            "Porque eres mi persona favorita en todo el universo.",
-            "Por tu capacidad de perdonar mis errores.",
-            "Por cómo me haces sentir que soy suficiente.",
-            "Por la dulzura de tus palabras cuando estoy estresado.",
-            "Porque me encanta cuando te quedas dormida a mi lado.",
-            "Por la forma en que te preocupas por mi bienestar.",
-            "Por cómo logras que me olvide de todo el mundo cuando estoy contigo.",
-            "Por los mensajes de voz que guardo para escucharlos después.",
-            "Por tu sentido del humor que encaja perfecto con el mío.",
-            "Por la lealtad que me demuestras cada día.",
-            "Porque eres mi equilibrio cuando todo se vuelve un caos.",
-            "Por cómo me haces reír hasta que me duele la panza.",
-            "Porque me haces sentir que puedo conquistar el mundo.",
-            "Por tu sencillez y tu gran corazón.",
-            "Por la forma en que me haces sentir en casa, esté donde esté.",
-            "Por cómo te emocionas con las pequeñas cosas.",
-            "Porque eres la razón de mis sonrisas espontáneas.",
-            "Por la forma en que me tomas de la mano frente a todos.",
-            "Por tu fuerza para levantarte después de cada caída.",
-            "Porque me encanta que compartamos nuestros gustos y aficiones.",
-            "Por cómo me haces sentir que nuestra historia es única.",
-            "Por la tranquilidad que me da tu presencia.",
-            "Por esos momentos de silencio que no son incómodos contigo.",
-            "Por cómo me haces sentir que el amor es algo sencillo.",
-            "Por la forma en que me miras cuando me dices que me amas.",
-            "Porque eres el mejor regalo que la vida me ha dado.",
-            "Por cómo me haces sentir que juntos podemos con todo.",
-            "Por tu capacidad para sorprenderme cada día.",
-            "Por la forma en que cuidas nuestra relación.",
-            "Porque me haces sentir el hombre más afortunado del planeta.",
-            "Por la manera en que pronuncias mi nombre.",
-            "Por cómo me haces sentir que cada esfuerzo vale la pena.",
-            "Por tu elegancia, no solo al vestir, sino al ser.",
-            "Porque eres mi luz en los momentos más oscuros.",
-            "Por la forma en que me haces sentir que somos un equipo.",
-            "Por cómo me haces vibrar con solo un roce.",
-            "Porque eres mi motivación para despertar con ganas cada mañana.",
-            "Por la manera en que me haces sentir que el mundo es un lugar mejor.",
-            "Por tu paciencia con mis manías.",
-            "Por cómo me haces sentir que nuestro amor no tiene límites.",
-            "Por la esperanza que me das de un futuro brillante a tu lado.",
-            "Por ser mi compañera de aventuras y de vida.",
-            "Porque te amo por quien eres y por quien soy cuando estoy contigo.",
-            "Porque cada día te vuelvo a elegir por encima de todo.",
-            "Porque cada segundo a tu lado cuenta.",
-            "Simplemente, porque eres tú, Princesita, y eso es todo lo que necesito."
-        ];
-
-        function generarRazon() {
-            const index = Math.floor(Math.random() * razones.length);
-            const texto = document.getElementById('razon-texto');
-            texto.style.opacity = 0;
-            setTimeout(() => {
-                texto.innerText = razones[index];
-                texto.style.opacity = 1;
-            }, 300);
-        }
-    </script>
-</body>
-</html>
+            "Por la complicidad que tenemos sin decir una sola
